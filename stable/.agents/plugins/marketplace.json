@@ -1,0 +1,10 @@
+{
+  "name": "dev-digest-ai-stable",
+  "interface": {"displayName": "Milad · SDD stable 1.0.0"},
+  "plugins": [
+    {"name": "engineering-paved-path", "source": {"source": "git-subdir", "url": "https://github.com/imaxxer121/dev-digest-ai-marketplace.git", "path": "plugins/engineering-paved-path", "sha": "15af4ceeff1e26e959649e9173f6cb651c882fe8"}},
+    {"name": "research-tools", "source": {"source": "git-subdir", "url": "https://github.com/imaxxer121/dev-digest-ai-marketplace.git", "path": "plugins/research-tools", "sha": "15af4ceeff1e26e959649e9173f6cb651c882fe8"}},
+    {"name": "architecture-review", "source": {"source": "git-subdir", "url": "https://github.com/imaxxer121/dev-digest-ai-marketplace.git", "path": "plugins/architecture-review", "sha": "15af4ceeff1e26e959649e9173f6cb651c882fe8"}},
+    {"name": "sdd-engineering", "source": {"source": "git-subdir", "url": "https://github.com/imaxxer121/dev-digest-ai-marketplace.git", "path": "plugins/sdd-engineering", "sha": "15af4ceeff1e26e959649e9173f6cb651c882fe8"}}
+  ]
+}

@@ -66,7 +66,10 @@ function validateArtifact(artifact, filename) {
   if (artifact.kind === 'agent') {
     check(artifact.model === 'inherit', `Agent must inherit the available model: ${filename}`);
     check(Array.isArray(artifact.tools) && artifact.tools.length > 0 && artifact.tools.every(tool => TOOLS.has(tool)), `Unsupported agent tool permissions: ${filename}`);
-    const readOnly = /\bread[- ]only\b|\bno edits\b/i.test(`${artifact.description}\n${artifact.content}`);
+    // A writer can describe a later read-only gate without becoming that gate.
+    // Check the role's declared purpose and our shipped read-only role identities.
+    const readOnly = /\bread[- ]only\b|\bno edits\b/i.test(artifact.description) ||
+      new Set(['researcher', 'architecture-reviewer', 'plan-verifier']).has(artifact.name);
     check(!readOnly || artifact.tools.every(tool => READ_TOOLS.has(tool)), `Read-only role has write/execution/delegation permissions: ${filename}`);
   }
 }

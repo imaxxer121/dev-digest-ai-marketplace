@@ -1,0 +1,689 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "evidence_kind": "actual_subscribed_codex_trials_with_separate_final_blind_grades",
+  "experiment_package": "sdd-engineering",
+  "experiment_version": "1.0.0",
+  "configured_model": "gpt-6.1-sol",
+  "served_model_identity": null,
+  "served_model_identity_reason": "The retained native events supply usage; no separate backend-resolved model identifier is claimed.",
+  "protocol": {
+    "scenario": "Prepare only a specification and implementation plan for this existing offline release-notes CLI. Add --limit N: N is a decimal integer from 1 through 100 inclusive. Reject missing, non-integer, non-decimal, out-of-range and duplicate --limit options using stderr and exit code 2. Without --limit preserve current output; preserve input ordering, empty-input output and offline operation. Include concrete verification of 1,100,0,101,1.5,abc,missing value and duplicate flags. No product implementation, no network or publication. Use the repository's real file layout and test command. All these requirements are mandatory. Return the requested structured artifact and readable Markdown.",
+    "provenance": {
+      "model": "gpt-6.1-sol",
+      "version": "1.0.0",
+      "runtime": "Codex subscribed CLI, controlled context adapter reads actual installed cache",
+      "plugin_manifest_sha256": "4d44e362fc7b4565b4577f1d588cf585ee5a8326c5ef8ebd9948b3c3d2c27d0b",
+      "profile_sha256": {
+        "spec-creator": "141e10e4eb5095a9393d46d5592e13ccc4612e78baa68acf4a0860092a09baec",
+        "implementation-planner": "94a74ada783fbb1a9fd6c4d09bee6c0aa0862acde1a48877ca24037b41235bd0"
+      },
+      "target_source_sha256": {
+        "AGENTS.md": "ba0f1eec25996f9001a1b6eb18d6a1fcde2798f5fb24070bcc3d5cf42b3ab301",
+        "package.json": "fe3ba92edc8686f2f997de9cba79a9fb6cfeefc5fde42082abde2cfbf8207579",
+        "src/cli.mjs": "ad2d2db4164f7ef6442704075ecdc315103000db6ae718428835b83df18e5d59",
+        "src/format.mjs": "4344128e106d0bd45997f2577028dc0fe70cb9c582c8a756cecc09aa0b740859",
+        "test/format.test.mjs": "08a538a7c8997b5cbccc24ea1d2f95d4be471ced48226c6862f52525418ae50e"
+      },
+      "routing": [
+        "spec-creator",
+        "implementation-planner"
+      ],
+      "sandbox": "read-only; shell/apps/hooks/plugins/agents/web disabled; no model-generated commands",
+      "billing_usd": null,
+      "billing_reason": "Subscribed CLI exposes usage, not billed USD. Parent adapter loads installed profiles explicitly; native implicit plugin loading disabled for a controlled experiment."
+    },
+    "optimization": "Replace repeated eager shared skill bodies with on-demand selection of only the relevant architecture body. Same scenario, roles, model, source and output schema in both groups."
+  },
+  "changed_factor": {
+    "baseline": "All seven engineering-paved-path skill bodies eagerly included twice in each stage prompt.",
+    "treatment": "Only the relevant onion-architecture body included once per stage by the explicit controlled adapter.",
+    "native_implicit_plugin_loading": false,
+    "scope": "Two sequential Codex CLI stages per trial: spec-creator then implementation-planner; the planner receives that trial's generated spec. Actual installed 1.0.0 cache profiles are supplied explicitly. No tools or delegated workers execute in these trials."
+  },
+  "sources": {
+    "trials_all": {
+      "private_ref": "l08-cost-private/trials-all.json",
+      "sha256": "5c987ba214a0330cc7b4a090b9934d43e84ee0ecf1ee29f8c949a765b7b77557"
+    },
+    "blind_map": {
+      "private_ref": "l08-cost-private/blind-map.json",
+      "sha256": "95681414f33d7b52b4366fb60b72e3687436fdd9ff71cb97c7460060169389a9"
+    },
+    "protocol": {
+      "private_ref": "l08-cost-private/protocol.json",
+      "sha256": "adffaa8b688e1a6081ac2993198b7581067db8543bc7112f0185fa2a44b5f46b"
+    }
+  },
+  "raw_evidence_policy": "Original private trials, prompts, schemas, model outputs, stderr, native JSONL and blind-map remain unchanged outside this repository. This artifact publishes selected measurements and hashes, not credentials or raw private journals.",
+  "quality_provenance": {
+    "method": "Independent review of blinded case-A..F spec/plan pairs; final grades and unblinding supplied by the root orchestrator.",
+    "reviewer_model": null,
+    "reviewer_model_reason": "Not identified in the supplied final grading evidence; no grader model is invented.",
+    "final_grade_authority": "Root task instruction with final blind findings; pair outputs inspected for the reported role-execution mismatch.",
+    "functional_coverage": "All six pairs cover all mandatory functional requirements; no added critical false negatives were reported by the final review.",
+    "scope_limit": "Functional AC coverage is narrower than executable workflow quality. Four REVIEW plans misassign commands to a no-shell verifier. This is not comprehensive correctness or model-quality certification."
+  },
+  "trial_order": [
+    "baseline-1",
+    "treatment-1",
+    "treatment-2",
+    "baseline-2",
+    "baseline-3",
+    "treatment-3"
+  ],
+  "trials": [
+    {
+      "id": "baseline-1",
+      "group": "baseline",
+      "version": "1.0.0",
+      "configured_model": "gpt-6.1-sol",
+      "input_tokens": 27078,
+      "cached_input_tokens": 0,
+      "output_tokens": 5363,
+      "total_tokens": 32441,
+      "duration_ms": 123533,
+      "billed_usd": null,
+      "billed_usd_reason": "Subscribed CLI usage does not expose billed USD; token totals are a cost proxy, not money.",
+      "legacy_deterministic_grade": {
+        "success": false,
+        "quality": {
+          "success": false,
+          "errors": [
+            "invalid task DAG"
+          ]
+        },
+        "authority": "Original adapter grade retained verbatim; not the final independent workflow-quality grade."
+      },
+      "independent_blind_grade": {
+        "case": "B",
+        "grade": "REVIEW",
+        "quality_success": false,
+        "functional_requirement_coverage": "complete (root final independent review)",
+        "added_critical_false_negatives": 0,
+        "reason": "The generated plan assigns executable test commands to plan-verifier, whose shipped profile has no shell permission. Return REVIEW; do not count the workflow as a quality success.",
+        "spec_sha256": "f1db9eee32719a6604b0e25b2799db02c4c0391bb96e55f5fcbbfc183f0d63a1",
+        "plan_sha256": "5db8884ac419774f59b3fd2bc0afb852e80c9a17356dd692ae42bf1f4901f38a"
+      },
+      "stages": [
+        {
+          "stage": "spec-creator",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 64083,
+          "input_tokens": 12238,
+          "cached_input_tokens": 0,
+          "output_tokens": 2743,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "3165a5567feae95258aa2f6b387f032201a9cd189f71a661c2a29315922b17bf",
+          "prompt_utf8_bytes": 12690,
+          "native_turn_usage": {
+            "input_tokens": 12238,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2743,
+            "reasoning_output_tokens": 32
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        },
+        {
+          "stage": "implementation-planner",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 59450,
+          "input_tokens": 14840,
+          "cached_input_tokens": 0,
+          "output_tokens": 2620,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "883ada5af36308d01f53c18a5840463727e4233b93739e0990973b894ba7151c",
+          "prompt_utf8_bytes": 24268,
+          "native_turn_usage": {
+            "input_tokens": 14840,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2620,
+            "reasoning_output_tokens": 31
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treatment-1",
+      "group": "treatment",
+      "version": "1.0.0",
+      "configured_model": "gpt-6.1-sol",
+      "input_tokens": 24505,
+      "cached_input_tokens": 0,
+      "output_tokens": 5538,
+      "total_tokens": 30043,
+      "duration_ms": 129169,
+      "billed_usd": null,
+      "billed_usd_reason": "Subscribed CLI usage does not expose billed USD; token totals are a cost proxy, not money.",
+      "legacy_deterministic_grade": {
+        "success": true,
+        "quality": {
+          "success": true,
+          "errors": []
+        },
+        "authority": "Original adapter grade retained verbatim; not the final independent workflow-quality grade."
+      },
+      "independent_blind_grade": {
+        "case": "C",
+        "grade": "REVIEW",
+        "quality_success": false,
+        "functional_requirement_coverage": "complete (root final independent review)",
+        "added_critical_false_negatives": 0,
+        "reason": "The generated plan assigns executable test commands to plan-verifier, whose shipped profile has no shell permission. Return REVIEW; do not count the workflow as a quality success.",
+        "spec_sha256": "74844a488546f45dc204e9af93face8977e58607005beaa65a408a09d72f34df",
+        "plan_sha256": "71f3df9d31b857fdfe4a20d558ea39114198ad80ad516f77afcfe20ce7724458"
+      },
+      "stages": [
+        {
+          "stage": "spec-creator",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 64996,
+          "input_tokens": 10961,
+          "cached_input_tokens": 0,
+          "output_tokens": 2930,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "883c03f5086daa02f0408a0b9ac4428dfdaea00b9224543df3e335b12a4ae801",
+          "prompt_utf8_bytes": 5768,
+          "native_turn_usage": {
+            "input_tokens": 10961,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2930,
+            "reasoning_output_tokens": 43
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        },
+        {
+          "stage": "implementation-planner",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 64173,
+          "input_tokens": 13544,
+          "cached_input_tokens": 0,
+          "output_tokens": 2608,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "d52daed18290d5fd858497fa1383188fba2aff2dcf2ddb1a0519021411de2a2f",
+          "prompt_utf8_bytes": 17055,
+          "native_turn_usage": {
+            "input_tokens": 13544,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2608,
+            "reasoning_output_tokens": 91
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treatment-2",
+      "group": "treatment",
+      "version": "1.0.0",
+      "configured_model": "gpt-6.1-sol",
+      "input_tokens": 24444,
+      "cached_input_tokens": 0,
+      "output_tokens": 4795,
+      "total_tokens": 29239,
+      "duration_ms": 118859,
+      "billed_usd": null,
+      "billed_usd_reason": "Subscribed CLI usage does not expose billed USD; token totals are a cost proxy, not money.",
+      "legacy_deterministic_grade": {
+        "success": true,
+        "quality": {
+          "success": true,
+          "errors": []
+        },
+        "authority": "Original adapter grade retained verbatim; not the final independent workflow-quality grade."
+      },
+      "independent_blind_grade": {
+        "case": "F",
+        "grade": "REVIEW",
+        "quality_success": false,
+        "functional_requirement_coverage": "complete (root final independent review)",
+        "added_critical_false_negatives": 0,
+        "reason": "The generated plan assigns executable test commands to plan-verifier, whose shipped profile has no shell permission. Return REVIEW; do not count the workflow as a quality success.",
+        "spec_sha256": "cdb616bd2d159f0244716798816eb4e792b9d91df809044ba5b226392fdaace7",
+        "plan_sha256": "fe53ebcddb71653cb977e1942466b8c7af8ea94660448f83f4458350d1174c0c"
+      },
+      "stages": [
+        {
+          "stage": "spec-creator",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 61696,
+          "input_tokens": 10961,
+          "cached_input_tokens": 0,
+          "output_tokens": 2862,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "dabe9d443d56e5344ca1a04838951394ceb0c5d43533c238ff005e30d6c2a3a0",
+          "prompt_utf8_bytes": 5768,
+          "native_turn_usage": {
+            "input_tokens": 10961,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2862,
+            "reasoning_output_tokens": 67
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        },
+        {
+          "stage": "implementation-planner",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 57163,
+          "input_tokens": 13483,
+          "cached_input_tokens": 0,
+          "output_tokens": 1933,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "75538949739c744aef583d33e22ff2d400aeacbf12ac27864614303ece440e99",
+          "prompt_utf8_bytes": 17049,
+          "native_turn_usage": {
+            "input_tokens": 13483,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1933,
+            "reasoning_output_tokens": 26
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baseline-2",
+      "group": "baseline",
+      "version": "1.0.0",
+      "configured_model": "gpt-6.1-sol",
+      "input_tokens": 26401,
+      "cached_input_tokens": 0,
+      "output_tokens": 4593,
+      "total_tokens": 30994,
+      "duration_ms": 101584,
+      "billed_usd": null,
+      "billed_usd_reason": "Subscribed CLI usage does not expose billed USD; token totals are a cost proxy, not money.",
+      "legacy_deterministic_grade": {
+        "success": false,
+        "quality": {
+          "success": false,
+          "errors": [
+            "empty output",
+            "AC without task:AC-11"
+          ]
+        },
+        "authority": "Original adapter grade retained verbatim; not the final independent workflow-quality grade."
+      },
+      "independent_blind_grade": {
+        "case": "E",
+        "grade": "REVIEW",
+        "quality_success": false,
+        "functional_requirement_coverage": "complete (root final independent review)",
+        "added_critical_false_negatives": 0,
+        "reason": "The generated plan assigns executable test commands to plan-verifier, whose shipped profile has no shell permission. Return REVIEW; do not count the workflow as a quality success.",
+        "spec_sha256": "05a6ef89438b784ba63bc6e155630978f922189dc563f4931e97df9dd94ed3aa",
+        "plan_sha256": "b7d186b0f4020f4d621010637fda359e70d37bf889d16b442e23d0090e9c8a6c"
+      },
+      "stages": [
+        {
+          "stage": "spec-creator",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 61444,
+          "input_tokens": 12238,
+          "cached_input_tokens": 0,
+          "output_tokens": 2331,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "7a4d9cbcb97942f2a1d344140b551cf1ad0b2f9a3003dff85349aacf1272620f",
+          "prompt_utf8_bytes": 12690,
+          "native_turn_usage": {
+            "input_tokens": 12238,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2331,
+            "reasoning_output_tokens": 84
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        },
+        {
+          "stage": "implementation-planner",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 40140,
+          "input_tokens": 14163,
+          "cached_input_tokens": 0,
+          "output_tokens": 2262,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "3183b7ff37d136564b4fdf76b23c840c6c2e52fba2319708c4a1f9e8a10f6652",
+          "prompt_utf8_bytes": 21434,
+          "native_turn_usage": {
+            "input_tokens": 14163,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2262,
+            "reasoning_output_tokens": 38
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baseline-3",
+      "group": "baseline",
+      "version": "1.0.0",
+      "configured_model": "gpt-6.1-sol",
+      "input_tokens": 26474,
+      "cached_input_tokens": 0,
+      "output_tokens": 4264,
+      "total_tokens": 30738,
+      "duration_ms": 105178,
+      "billed_usd": null,
+      "billed_usd_reason": "Subscribed CLI usage does not expose billed USD; token totals are a cost proxy, not money.",
+      "legacy_deterministic_grade": {
+        "success": true,
+        "quality": {
+          "success": true,
+          "errors": []
+        },
+        "authority": "Original adapter grade retained verbatim; not the final independent workflow-quality grade."
+      },
+      "independent_blind_grade": {
+        "case": "D",
+        "grade": "PASS",
+        "quality_success": true,
+        "functional_requirement_coverage": "complete (root final independent review)",
+        "added_critical_false_negatives": 0,
+        "reason": "Final independent blind review accepted the spec/plan pair; no blocking role-execution mismatch.",
+        "spec_sha256": "7fc16cb9719b387a559c428a29ea22d178e2fb2bb27a3b0a4e59cfe107a974a4",
+        "plan_sha256": "ce0d5584ed9fd4fabcbe88b79315f886b7cf2aa84c5ed34b2fa20e6a1c2382fa"
+      },
+      "stages": [
+        {
+          "stage": "spec-creator",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 57050,
+          "input_tokens": 12238,
+          "cached_input_tokens": 0,
+          "output_tokens": 2381,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "04752373142ccb5af239da3d10d4251f2c4e4f0717c99573d176aec43cea4b2f",
+          "prompt_utf8_bytes": 12690,
+          "native_turn_usage": {
+            "input_tokens": 12238,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2381,
+            "reasoning_output_tokens": 91
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        },
+        {
+          "stage": "implementation-planner",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 48128,
+          "input_tokens": 14236,
+          "cached_input_tokens": 0,
+          "output_tokens": 1883,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "8409e643c098560bcdd81fb9c4eaee93e25230b113fe290110e06daf388df971",
+          "prompt_utf8_bytes": 21699,
+          "native_turn_usage": {
+            "input_tokens": 14236,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1883,
+            "reasoning_output_tokens": 41
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treatment-3",
+      "group": "treatment",
+      "version": "1.0.0",
+      "configured_model": "gpt-6.1-sol",
+      "input_tokens": 24301,
+      "cached_input_tokens": 0,
+      "output_tokens": 4849,
+      "total_tokens": 29150,
+      "duration_ms": 108842,
+      "billed_usd": null,
+      "billed_usd_reason": "Subscribed CLI usage does not expose billed USD; token totals are a cost proxy, not money.",
+      "legacy_deterministic_grade": {
+        "success": false,
+        "quality": {
+          "success": false,
+          "errors": [
+            "task ownership/checks"
+          ]
+        },
+        "authority": "Original adapter grade retained verbatim; not the final independent workflow-quality grade."
+      },
+      "independent_blind_grade": {
+        "case": "A",
+        "grade": "PASS",
+        "quality_success": true,
+        "functional_requirement_coverage": "complete (root final independent review)",
+        "added_critical_false_negatives": 0,
+        "reason": "Final independent blind review accepted the spec/plan pair; no blocking role-execution mismatch.",
+        "spec_sha256": "57a9d6ab20bb48c861a8adf0ab8a8aef951e96af83d497e5ebc5275b148be1ec",
+        "plan_sha256": "e56ed343ecf2ccbbe96e3d8f516934caca9ae71e395c921bb70859d69182a8c7"
+      },
+      "stages": [
+        {
+          "stage": "spec-creator",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 50773,
+          "input_tokens": 10961,
+          "cached_input_tokens": 0,
+          "output_tokens": 2593,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "973b0329c4c4a75f0c10b42a860ec13f56dc39e9948284042cb094191a350f92",
+          "prompt_utf8_bytes": 5768,
+          "native_turn_usage": {
+            "input_tokens": 10961,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2593,
+            "reasoning_output_tokens": 106
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        },
+        {
+          "stage": "implementation-planner",
+          "exit": 0,
+          "signal": null,
+          "timed_out": false,
+          "duration_ms": 58069,
+          "input_tokens": 13340,
+          "cached_input_tokens": 0,
+          "output_tokens": 2256,
+          "reported_turns": 1,
+          "model_generated_tool_calls": 0,
+          "native_cli_invocations": 1,
+          "actual_http_request_count": null,
+          "raw_event_sha256": "5c29a2e6230ee0b7d212ca1162e41b4bae75420f177bd962235688e4d31d182f",
+          "prompt_utf8_bytes": 16491,
+          "native_turn_usage": {
+            "input_tokens": 13340,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2256,
+            "reasoning_output_tokens": 26
+          },
+          "raw_event_digest_rechecked": true,
+          "observed_completed_item_types": [
+            "agent_message"
+          ]
+        }
+      ]
+    }
+  ],
+  "groups": {
+    "baseline": {
+      "trials": 3,
+      "input_tokens": 79953,
+      "cached_input_tokens": 0,
+      "output_tokens": 14220,
+      "total_tokens": 94173,
+      "duration_ms_total": 330295,
+      "median_duration_ms": 105178,
+      "legacy_passes": 1,
+      "independent_passes": 1,
+      "prompt_utf8_bytes": 105471,
+      "native_cli_invocations": 6,
+      "model_generated_tool_calls": 0,
+      "independent_quality_success_rate": {
+        "numerator": 1,
+        "denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "independent_quality_review": 2,
+      "quality_success_denominator": "Final independent blind PASS only; all token usage, including REVIEW trials, stays in the numerator.",
+      "uncached_input_tokens_per_quality_success": 79953,
+      "total_tokens_per_quality_success": 94173,
+      "cache_ratio": 0,
+      "cache_ratio_denominator": "Sum of measured native turn.completed input_tokens for every trial in this group; cached_input_tokens is the included cached subset.",
+      "billed_usd": null,
+      "actual_http_request_count": null
+    },
+    "treatment": {
+      "trials": 3,
+      "input_tokens": 73250,
+      "cached_input_tokens": 0,
+      "output_tokens": 15182,
+      "total_tokens": 88432,
+      "duration_ms_total": 356870,
+      "median_duration_ms": 118859,
+      "legacy_passes": 2,
+      "independent_passes": 1,
+      "prompt_utf8_bytes": 67899,
+      "native_cli_invocations": 6,
+      "model_generated_tool_calls": 0,
+      "independent_quality_success_rate": {
+        "numerator": 1,
+        "denominator": 3,
+        "rate": 0.3333333333333333
+      },
+      "independent_quality_review": 2,
+      "quality_success_denominator": "Final independent blind PASS only; all token usage, including REVIEW trials, stays in the numerator.",
+      "uncached_input_tokens_per_quality_success": 73250,
+      "total_tokens_per_quality_success": 88432,
+      "cache_ratio": 0,
+      "cache_ratio_denominator": "Sum of measured native turn.completed input_tokens for every trial in this group; cached_input_tokens is the included cached subset.",
+      "billed_usd": null,
+      "actual_http_request_count": null
+    }
+  },
+  "comparison": {
+    "baseline_total_tokens": 94173,
+    "treatment_total_tokens": 88432,
+    "total_token_reduction": 5741,
+    "total_token_reduction_fraction": 0.0609622715640364,
+    "baseline_median_duration_ms": 105178,
+    "treatment_median_duration_ms": 118859,
+    "median_duration_increase_ms": 13681,
+    "median_duration_increase_fraction": 0.13007473045693965,
+    "quality_successes_baseline": 1,
+    "quality_successes_treatment": 1,
+    "quality_trials_per_group": 3,
+    "quality_lift_demonstrated": false,
+    "billed_usd": null,
+    "interpretation": "Treatment lowered the measured token proxy by 6.10%; quality success stayed 1/3 in each group and median latency increased 13.01%. Three trials per group are descriptive, not statistical significance or a monetary-savings claim."
+  },
+  "follow_up": {
+    "source_version": "1.1.0",
+    "change": "Mandatory requirement-to-AC coverage gate, resolvable task-ID dependencies and command ownership assigned only to permitted implementer/orchestrator runtimes; no-shell reviewers consume recorded evidence.",
+    "status": "Source change independently reviewed; these 1.0.0 trials were not rerun or regraded as 1.1.0 results."
+  },
+  "documentation_work": {
+    "actions": "Read retained source files, native event JSON and blinded artifact pairs; calculate aggregates and write only the authorized report/evidence files.",
+    "tests_or_shell_commands_run": 0,
+    "model_calls": 0,
+    "private_source_files_modified": false
+  }
+}

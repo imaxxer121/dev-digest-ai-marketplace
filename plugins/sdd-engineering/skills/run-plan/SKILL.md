@@ -21,6 +21,13 @@ concurrent implementers and no overlapping writers. Workers cannot spawn nested
 agents or publish. The orchestrator retains permitted checks and integration.
 Load stack skills from engineering-paved-path only when the task needs them.
 
+The spec's coverage table must give every mandatory requirement an AC before
+execution starts. For structured requirements/acceptance arrays, the orchestrator
+may run `evals/coverage-gate.mjs` from the installed plugin root; in Claude Code
+that root is `${CLAUDE_PLUGIN_ROOT}`. Return missing coverage to the spec writer
+without silently expanding scope. Review-gate dependencies must resolve to real
+task IDs, with read-only tasks declaring no editable paths.
+
 Collect each task's actual changes, commands/results and remaining evidence.
 After implementation checks, dispatch the two independent read-only gates with
 the same spec/plan/diff and evidence. Repair critical/high findings and missing

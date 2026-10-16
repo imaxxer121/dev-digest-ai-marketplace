@@ -116,6 +116,14 @@ test('read-only agent tools reject direct writers, unrestricted execution and de
   await example.put('plugins/foundation/agents/auditor.md', '---\nname: auditor\ndescription: Read-only reviewer\nmodel: inherit\ntools: [Read, Glob, Grep]\n---\nReturn evidence only. No edits.');
   assert.equal((await loadMarketplace(example.root)).artifacts.filter(item => item.kind === 'agent').length, 1);
 });
+
+test('a scoped plan writer can describe independent read-only gates without inheriting their permissions', async t => {
+  const example = await fixture(t);
+  await example.put('plugins/foundation/agents/plan-writer.md', '---\nname: plan-writer\ndescription: Write the designated plan artifact\nmodel: inherit\ntools: [Read, Write, Edit]\n---\nPlan independent read-only review tasks with no editable paths.');
+  assert.equal((await loadMarketplace(example.root)).artifacts.some(a => a.name === 'plan-writer'), true);
+  await example.put('plugins/foundation/agents/plan-verifier.md', '---\nname: plan-verifier\ndescription: Verify acceptance\nmodel: inherit\ntools: [Read, Bash]\n---\nVerify the assigned plan.');
+  await assert.rejects(loadMarketplace(example.root), /Read-only role has write\/execution\/delegation permissions/);
+});
 test('portable component paths reject workstation imports, missing resources and escaped support links while allowing documentation URLs', async t => {
   const example = await fixture(t);
   const header = '---\nname: rules\ndescription: Rules\n---\n';
