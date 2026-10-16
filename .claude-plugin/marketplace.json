@@ -1,0 +1,31 @@
+{
+  "name": "dev-digest-ai-marketplace",
+  "owner": {
+    "name": "Milad"
+  },
+  "metadata": {
+    "description": "Portable SDD engineering tools and a transparent measured workflow."
+  },
+  "plugins": [
+    {
+      "name": "engineering-paved-path",
+      "source": "./plugins/engineering-paved-path",
+      "description": "Focused architecture, TypeScript, UI, service and data practices for SDD work."
+    },
+    {
+      "name": "research-tools",
+      "source": "./plugins/research-tools",
+      "description": "Repository research with source citations and a read-only researcher."
+    },
+    {
+      "name": "architecture-review",
+      "source": "./plugins/architecture-review",
+      "description": "Independent architecture review against the target repository boundaries."
+    },
+    {
+      "name": "sdd-engineering",
+      "source": "./plugins/sdd-engineering",
+      "description": "Specification, implementation planning, bounded execution and verification."
+    }
+  ]
+}

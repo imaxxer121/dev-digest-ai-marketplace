@@ -1,0 +1,25 @@
+{
+  "name": "sdd-engineering",
+  "version": "1.0.0",
+  "description": "Specification, implementation planning, bounded execution and verification.",
+  "author": {
+    "name": "Milad"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/imaxxer121/dev-digest-ai-marketplace",
+  "repository": "https://github.com/imaxxer121/dev-digest-ai-marketplace",
+  "dependencies": [
+    {
+      "name": "engineering-paved-path",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "research-tools",
+      "version": "^1.0.0"
+    },
+    {
+      "name": "architecture-review",
+      "version": "^1.0.0"
+    }
+  ]
+}

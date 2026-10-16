@@ -1,0 +1,11 @@
+{
+  "name": "engineering-paved-path",
+  "version": "1.0.0",
+  "description": "Focused architecture, TypeScript, UI, service and data practices for SDD work.",
+  "author": {
+    "name": "Milad"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/imaxxer121/dev-digest-ai-marketplace",
+  "repository": "https://github.com/imaxxer121/dev-digest-ai-marketplace"
+}
