@@ -1,0 +1,260 @@
+{
+  "observed_at": "2026-10-16T14:23:40.814Z",
+  "release_1_0_commit": "15af4ceeff1e26e959649e9173f6cb651c882fe8",
+  "release_1_1_commit": "c3f52eb7459220f81a844abd69d191c3c2ced049",
+  "claude_cli": "2.1.301; installer/validation only, no Claude model authentication or inference",
+  "claude_receipts": {
+    "1.0": [
+      {
+        "id": "architecture-review@dev-digest-ai-marketplace",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      },
+      {
+        "id": "engineering-paved-path@dev-digest-ai-marketplace",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      },
+      {
+        "id": "research-tools@dev-digest-ai-marketplace",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      },
+      {
+        "id": "sdd-engineering@dev-digest-ai-marketplace",
+        "displayed_version": "1.0.0",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      }
+    ],
+    "1.1": [
+      {
+        "id": "architecture-review@dev-digest-ai-marketplace",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      },
+      {
+        "id": "engineering-paved-path@dev-digest-ai-marketplace",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      },
+      {
+        "id": "research-tools@dev-digest-ai-marketplace",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      },
+      {
+        "id": "sdd-engineering@dev-digest-ai-marketplace",
+        "displayed_version": "1.1.0",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      }
+    ],
+    "stable": [
+      {
+        "id": "architecture-review@dev-digest-ai-marketplace",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": false,
+        "project_enabled": false
+      },
+      {
+        "id": "architecture-review@dev-digest-ai-stable",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      },
+      {
+        "id": "engineering-paved-path@dev-digest-ai-marketplace",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": false,
+        "project_enabled": false
+      },
+      {
+        "id": "engineering-paved-path@dev-digest-ai-stable",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      },
+      {
+        "id": "research-tools@dev-digest-ai-marketplace",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": false,
+        "project_enabled": false
+      },
+      {
+        "id": "research-tools@dev-digest-ai-stable",
+        "displayed_version": "1.0.0-15af4ceeff1e",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      },
+      {
+        "id": "sdd-engineering@dev-digest-ai-marketplace",
+        "displayed_version": "1.1.0",
+        "scope": "project",
+        "enabled": false,
+        "project_enabled": false
+      },
+      {
+        "id": "sdd-engineering@dev-digest-ai-stable",
+        "displayed_version": "1.0.0",
+        "scope": "project",
+        "enabled": true,
+        "project_enabled": true
+      }
+    ]
+  },
+  "native_codex": {
+    "cli": "0.162.0-alpha.17.2",
+    "plugins": [
+      {
+        "name": "engineering-paved-path",
+        "installed": true,
+        "enabled": true,
+        "local_version": "1.0.0"
+      },
+      {
+        "name": "research-tools",
+        "installed": true,
+        "enabled": true,
+        "local_version": "1.0.0"
+      },
+      {
+        "name": "architecture-review",
+        "installed": true,
+        "enabled": true,
+        "local_version": "1.0.0"
+      },
+      {
+        "name": "sdd-engineering",
+        "installed": true,
+        "enabled": true,
+        "local_version": "1.1.0"
+      }
+    ],
+    "fresh_session_skills": [
+      {
+        "name": "engineering-paved-path:drizzle-practices",
+        "installed_cache_version": "1.0.0"
+      },
+      {
+        "name": "engineering-paved-path:fastify-practices",
+        "installed_cache_version": "1.0.0"
+      },
+      {
+        "name": "engineering-paved-path:frontend-architecture",
+        "installed_cache_version": "1.0.0"
+      },
+      {
+        "name": "engineering-paved-path:onion-architecture",
+        "installed_cache_version": "1.0.0"
+      },
+      {
+        "name": "engineering-paved-path:react-best-practices",
+        "installed_cache_version": "1.0.0"
+      },
+      {
+        "name": "engineering-paved-path:react-testing-library",
+        "installed_cache_version": "1.0.0"
+      },
+      {
+        "name": "engineering-paved-path:typescript-practices",
+        "installed_cache_version": "1.0.0"
+      },
+      {
+        "name": "sdd-engineering:engineering-insights",
+        "installed_cache_version": "1.1.0"
+      },
+      {
+        "name": "sdd-engineering:run-plan",
+        "installed_cache_version": "1.1.0"
+      },
+      {
+        "name": "sdd-engineering:workflow-retro",
+        "installed_cache_version": "1.1.0"
+      }
+    ],
+    "skill_errors": []
+  },
+  "hosted": {
+    "pr1": "https://github.com/imaxxer121/dev-digest-ai-marketplace/pull/1",
+    "pr2": "https://github.com/imaxxer121/dev-digest-ai-marketplace/pull/2",
+    "pr2_validate": "https://github.com/imaxxer121/dev-digest-ai-marketplace/actions/runs/38913881886",
+    "main_validate": "https://github.com/imaxxer121/dev-digest-ai-marketplace/actions/runs/38914059816",
+    "pages": "https://github.com/imaxxer121/dev-digest-ai-marketplace/actions/runs/38914060138",
+    "catalog": "https://imaxxer121.github.io/dev-digest-ai-marketplace/"
+  },
+  "browser_observation": "Live catalog showed SDD 1.1.0 with 3 skills, 4 agents and 3 dependencies; source artifact view/search/copy-install previously inspected at 1.0.",
+  "runtime_scope": "Claude proves dependency installer/update/stable activation. Codex native list proves installed versions and new-session skill discovery. Actual model behavior uses the documented explicit installed-profile adapter and real delegated roles; implicit native Claude agent registration/inference is not claimed.",
+  "restore_latest": {
+    "observed_at": "2026-10-16T14:25:05.1744821Z",
+    "claude": [
+      {
+        "id": "architecture-review@dev-digest-ai-marketplace",
+        "version": "1.0.0-15af4ceeff1e",
+        "enabled": true
+      },
+      {
+        "id": "architecture-review@dev-digest-ai-stable",
+        "version": "1.0.0-15af4ceeff1e",
+        "enabled": false
+      },
+      {
+        "id": "engineering-paved-path@dev-digest-ai-marketplace",
+        "version": "1.0.0-15af4ceeff1e",
+        "enabled": true
+      },
+      {
+        "id": "engineering-paved-path@dev-digest-ai-stable",
+        "version": "1.0.0-15af4ceeff1e",
+        "enabled": false
+      },
+      {
+        "id": "research-tools@dev-digest-ai-marketplace",
+        "version": "1.0.0-15af4ceeff1e",
+        "enabled": true
+      },
+      {
+        "id": "research-tools@dev-digest-ai-stable",
+        "version": "1.0.0-15af4ceeff1e",
+        "enabled": false
+      },
+      {
+        "id": "sdd-engineering@dev-digest-ai-marketplace",
+        "version": "1.1.0",
+        "enabled": true
+      },
+      {
+        "id": "sdd-engineering@dev-digest-ai-stable",
+        "version": "1.0.0",
+        "enabled": false
+      }
+    ],
+    "native_config_writes": "Eight exact course-plugin enable flags updated through native config API; all returned status ok. Current four enabled; stable four disabled.",
+    "data_policy": "No uninstall, cache purge, target source reset or deletion."
+  },
+  "raw_receipt_sha256": {
+    "1.0": "7859fcf647d2bc46e49191c76f8ead059a0282a8a03a6c7151dd2a65cb489df1",
+    "1.1": "1f5b8b111af7097a73fb250415ae07bb18d5ddf64d4095529ed6070416d9ecd5",
+    "stable": "746e1e111827cea5a829faa7a633e0c0de6f87186b9ff64cec0055d18a6c3d57"
+  }
+}

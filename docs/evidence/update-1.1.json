@@ -1,0 +1,90 @@
+{
+  "observed_at": "2026-10-16T14:18:58.743Z",
+  "plugin": "sdd-engineering",
+  "version": "1.1.0",
+  "release_commit": "c3f52eb7459220f81a844abd69d191c3c2ced049",
+  "runtime": "Fresh Codex CLI stages supplied actual native installed profile bodies; implicit plugin loading disabled by the controlled adapter",
+  "helper_sha256": "8b3e13729e5528792183c282c92fe6bf7c724757a40cfb80fdc9c13af14d4351",
+  "spec_profile_sha256": "d271752287015473f7ccc8f70adbfdad24fd6ca53d431c8317c08e66770402fa",
+  "plan_profile_sha256": "e4f7eff1dac1eec13b9c00973b259e3bfe6dcc0ef1db80ca7f06cc02aaa6c21b",
+  "positive": {
+    "pass": true,
+    "errors": [],
+    "requirements": 10,
+    "acceptance": 12,
+    "mandatory": 10
+  },
+  "negative": {
+    "mutation": "Remove one mandatory requirement from every AC",
+    "requirement": "R-01",
+    "pass": false,
+    "errors": [
+      "Mandatory requirement without AC:R-01"
+    ],
+    "requirements": 10,
+    "acceptance": 12,
+    "mandatory": 10
+  },
+  "model_trial": {
+    "id": "update-smoke",
+    "group": "treatment",
+    "version": "1.1.0",
+    "model": "gpt-6.1-sol",
+    "success": false,
+    "quality": {
+      "success": false,
+      "errors": [
+        "empty output",
+        "task ownership/checks"
+      ]
+    },
+    "input_tokens": 24832,
+    "cached_input_tokens": 8192,
+    "output_tokens": 5450,
+    "duration_ms": 124795,
+    "stages": [
+      {
+        "stage": "spec-creator",
+        "exit": 0,
+        "signal": null,
+        "timed_out": false,
+        "duration_ms": 64108,
+        "input_tokens": 11075,
+        "cached_input_tokens": 0,
+        "output_tokens": 2806,
+        "reported_turns": 1,
+        "model_generated_tool_calls": 0,
+        "native_cli_invocations": 1,
+        "actual_http_request_count": null,
+        "raw_event_sha256": "5cf659c1abc4cfefc5784f231818db9248d70232a661f7c86007f410fc6c9cf3",
+        "prompt_utf8_bytes": 6252
+      },
+      {
+        "stage": "implementation-planner",
+        "exit": 0,
+        "signal": null,
+        "timed_out": false,
+        "duration_ms": 60687,
+        "input_tokens": 13757,
+        "cached_input_tokens": 8192,
+        "output_tokens": 2644,
+        "reported_turns": 1,
+        "model_generated_tool_calls": 0,
+        "native_cli_invocations": 1,
+        "actual_http_request_count": null,
+        "raw_event_sha256": "97e4083e2eb447ea1bc72497909f9528e0063054f29c135a3ee2a55e245efeee",
+        "prompt_utf8_bytes": 17853
+      }
+    ],
+    "billed_usd": null
+  },
+  "plan_commands_policy": "T3 orchestrator executes npm test; T4 and T5 read-only reviewers inspect recorded evidence. No command execution is assigned to the no-shell reviewers.",
+  "legacy_grade_note": "The retained experiment adapter still flags empty-output wording and empty review-task owned_paths; those automatic failures are preserved and do not replace the installed coverage gate.",
+  "spec_result_sha256": "717e4d331818ab825ebed218f3ec10b6e115621fffdae751314402cf8e55b4d2",
+  "plan_result_sha256": "d02fc56171586b477c6977eb49da0930037e01ba5433daa0e0669663547d5561",
+  "independent_review": {
+    "verdict": "PASS",
+    "scope": "10 mandatory requirements, 12 substantive ACs, acyclic DAG and executable command ownership; proposed artifacts only.",
+    "source_bytes": "Scenario unchanged; target source matches original after normalizing LF/CRLF, raw snapshot hashes differ."
+  }
+}

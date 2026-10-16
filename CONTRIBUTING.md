@@ -22,3 +22,10 @@ Before review: check dependency references, supporting files, portable paths,
 permissions, compatibility, SemVer/changelog and catalog output. Generated index
 and build output do not belong in commits. The owner reviews code and the final
 artifact; passing CI alone does not assert that every model run is correct.
+
+Main requires a pull request, the GitHub Actions `validate` check, an up-to-date
+branch and resolved conversations, including administrators. Force pushes and
+deletions are disabled. [Observed protection](docs/evidence/main-protection.json)
+records the actual settings. This teaching repository has one owner, who cannot
+approve their own PR: the enforced human approval count is explicitly zero;
+CODEOWNERS and independent source-review evidence remain separate controls.

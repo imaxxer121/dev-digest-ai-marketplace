@@ -26,14 +26,13 @@ the four packages and start a fresh session; explicit dependency installation
 is documented because Claude's dependency resolution must not be assumed in
 another runtime.
 
-```sh
-codex plugin marketplace add imaxxer121/dev-digest-ai-marketplace
-codex plugin add engineering-paved-path@dev-digest-ai-marketplace
-codex plugin add research-tools@dev-digest-ai-marketplace
-codex plugin add architecture-review@dev-digest-ai-marketplace
-codex plugin add sdd-engineering@dev-digest-ai-marketplace
-codex plugin list --marketplace dev-digest-ai-marketplace --json
-```
+In Codex CLI open `/plugins` to install from a configured marketplace, then
+start a new session. The independent
+[consumer's repository catalog](https://github.com/imaxxer121/sdd-release-notes-demo/blob/feat/limit-installed-workflow/.agents/plugins/marketplace.json)
+shows the supported remote `git-subdir` sources, pinned to the released commit.
+Its `.codex/config.toml` enables the four packages only for that trusted project.
+The measured installation used the native app-server plugin API; sanitized
+receipts and exact installed versions are in `docs/evidence/release-sequence.json`.
 
 Use the target repository's instructions and test commands. Start with the
 installed `sdd-engineering:spec-creator`, then `implementation-planner`; use

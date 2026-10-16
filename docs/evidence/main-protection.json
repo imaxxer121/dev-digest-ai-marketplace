@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-16T14:31:47.6523913Z",
+  "required_checks": [
+    {
+      "context": "validate",
+      "app_id": 15368
+    }
+  ],
+  "approval_count": 0,
+  "branch": "main",
+  "conversation_resolution": true,
+  "requires_pr": true,
+  "allow_force_pushes": false,
+  "enforce_admins": true,
+  "solo_owner_note": "The sole owner cannot approve their own PR. PR/check/conversation rules are enforced, including administrators; human approval count is explicitly zero. Independent source review evidence is recorded separately.",
+  "require_codeowner_approval": false,
+  "allow_deletions": false
+}

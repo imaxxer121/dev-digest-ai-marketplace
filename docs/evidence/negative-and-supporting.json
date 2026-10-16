@@ -1,0 +1,72 @@
+{
+  "observed_at": "2026-10-16T14:30:24.749Z",
+  "supporting_script": {
+    "plugin_version": "1.1.0",
+    "sha256": "d976a3390f0312819a8b783f08601d1a301643c061860bbfc6422bbebbebf02c",
+    "before": {
+      "trials": 3,
+      "successes": 1,
+      "success_rate": 0.3333333333333333,
+      "median_duration_ms": 105178,
+      "input_tokens": 79953,
+      "cached_input_tokens": 0,
+      "output_tokens": 14220,
+      "uncached_input_tokens_per_success": 79953,
+      "all_tokens_per_success": 94173,
+      "billed_usd_per_success": null,
+      "billing_reason": "Subscription CLI does not expose billed USD; tokens are a cost proxy."
+    },
+    "after": {
+      "trials": 3,
+      "successes": 1,
+      "success_rate": 0.3333333333333333,
+      "median_duration_ms": 118859,
+      "input_tokens": 73250,
+      "cached_input_tokens": 0,
+      "output_tokens": 15182,
+      "uncached_input_tokens_per_success": 73250,
+      "all_tokens_per_success": 88432,
+      "billed_usd_per_success": null,
+      "billing_reason": "Subscription CLI does not expose billed USD; tokens are a cost proxy."
+    },
+    "grade_source": "Independent blind review; derived in memory without rewriting original trial JSON"
+  },
+  "negative_control": {
+    "prompt": "2 + 2; answer only the digit; no project or file work needed",
+    "configured_model": "gpt-6.1-sol",
+    "native_plugin_enabled": true,
+    "attempts": [
+      {
+        "attempt": "l08-negative",
+        "pass": false,
+        "plugin_loading_error": true,
+        "answer": "4",
+        "usage": {
+          "input_tokens": 9131,
+          "cached_input_tokens": 3712,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5,
+          "reasoning_output_tokens": 0
+        },
+        "emitted_root_tool_calls": 0,
+        "raw_event_sha256": "5190be2c26e52a55235997acba33f72a7f640c62ced36fa16053a1284426e62d"
+      },
+      {
+        "attempt": "l08-negative-fixed",
+        "pass": true,
+        "plugin_loading_error": false,
+        "answer": "4",
+        "usage": {
+          "input_tokens": 9290,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5,
+          "reasoning_output_tokens": 0
+        },
+        "emitted_root_tool_calls": 0,
+        "raw_event_sha256": "cebe522a0307565d81da090da3fc6fbeaa46207a502919e3bd5187d2de29f7ef"
+      }
+    ],
+    "limitations": "One simple unrelated request; emitted root actions only, not universal nonactivation or descendant totals. First load-parameter failure retained, corrected raw CLI key loads without plugin errors. No Claude inference."
+  }
+}
