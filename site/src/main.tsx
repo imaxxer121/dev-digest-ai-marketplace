@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { parseRoute, safeAssetPath, searchCatalog, validateCatalog, installationOrder } from './catalog.mjs';
+import { parseRoute, safeAssetPath, searchCatalog, validateCatalog, installationGuide } from './catalog.mjs';
 import { renderMarkdown, sourceUrl } from './markdown.mjs';
 import type { Artifact, BodyRef, Catalog, Data, Plugin, Release, Stats } from './types';
 import './styles.css';
@@ -29,7 +29,7 @@ function Copy({ value, label = 'Copy commands' }: { value: string; label?: strin
   async function copy() {
     setPending(true);
     try { if (!navigator.clipboard) throw new Error(); await navigator.clipboard.writeText(value); setStatus('Copied to clipboard'); }
-    catch { setStatus('Copy unavailable. Select the command below.'); }
+    catch { setStatus('Copy unavailable. Select the text below.'); }
     finally { setPending(false); }
   }
   return <><button className="copy" onClick={() => void copy()} disabled={pending}>{status === 'Copied to clipboard' ? '✓ Copied' : label} <span aria-hidden="true">⧉</span></button><span className="sr-only" role="status">{status}</span>{status.startsWith('Copy unavailable') && <p className="copy-error">{status}</p>}</>;
@@ -84,12 +84,11 @@ function Home({ catalog, stats }: { catalog: Catalog; stats: Stats }) {
 }
 function InstallBox({ plugin, catalog }: { plugin: Plugin; catalog: Catalog }) {
   const [runtime, setRuntime] = useState('claude');
-  const order = installationOrder(catalog, plugin.name) as string[];
-  const slug = plugin.repository ? new URL(plugin.repository).pathname.replace(/^\//, '').replace(/\/$/, '') : 'imaxxer121/dev-digest-ai-marketplace';
-  const command = runtime === 'claude' ? `claude plugin marketplace add ${slug}\nclaude plugin install ${plugin.name}@${catalog.marketplace} --scope project`
-    : `codex plugin marketplace add ${slug}\n${order.map(name => `codex plugin add ${name}@${catalog.marketplace}`).join('\n')}`;
+  const guide = installationGuide(catalog, plugin.name, runtime);
   return <aside className="install-panel"><div className="eyebrow">ADD TO YOUR TOOLKIT</div><h2>Install the plugin</h2><div className="runtime-switch" role="group" aria-label="Installation runtime">{['claude', 'codex'].map(value => <button key={value} aria-pressed={runtime === value} onClick={() => setRuntime(value)}>{value === 'claude' ? 'Claude Code' : 'Codex'}</button>)}</div>
-    <div className="code-label"><span>TERMINAL</span><Copy value={command} label="Copy install" /></div><pre className="install-code"><code>{command}</code></pre><p>Run in your target repository, then start a fresh session. Copying never executes a command.</p><dl className="metadata"><div><dt>Version</dt><dd>{plugin.version}</dd></div><div><dt>Maintainer</dt><dd>{plugin.owner}</dd></div><div><dt>License</dt><dd>{plugin.license ?? 'See source'}</dd></div><div><dt>Dependencies</dt><dd>{plugin.dependencies.length}</dd></div></dl></aside>;
+    <div className="code-label"><span>{guide.label}</span><Copy key={runtime} value={guide.text} label={guide.copyLabel} /></div>
+    {runtime === 'codex' ? <><p>{guide.steps[0]}</p>{guide.files.map((file, index) => <details key={file.path} open={index === 0}><summary className="small muted">{file.path}</summary><pre className="install-code"><code>{file.content}</code></pre></details>)}{guide.steps.slice(1).map(step => <p key={step}>{step}</p>)}</> : <pre className="install-code"><code>{guide.text}</code></pre>}
+    <p>{guide.note}</p><dl className="metadata"><div><dt>Version</dt><dd>{plugin.version}</dd></div><div><dt>Maintainer</dt><dd>{plugin.owner}</dd></div><div><dt>License</dt><dd>{plugin.license ?? 'See source'}</dd></div><div><dt>Dependencies</dt><dd>{plugin.dependencies.length}</dd></div></dl></aside>;
 }
 function ComponentList({ artifacts }: { artifacts: Artifact[] }) {
   return <div className="component-list">{artifacts.map(artifact => <a key={artifact.id} href={artifactHref(artifact.id)}><span className={`component-symbol ${artifact.kind}`} aria-hidden="true">{artifact.kind === 'skill' ? '✦' : '◇'}</span><span><strong>{artifact.name}</strong><p>{artifact.description}</p></span><Pill>{artifact.kind}</Pill><Arrow /></a>)}</div>;

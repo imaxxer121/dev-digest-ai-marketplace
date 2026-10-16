@@ -55,3 +55,41 @@ export function installationOrder(catalog, selected) {
   };
   visit(selected); return result;
 }
+
+export function installationGuide(catalog, selected, runtime) {
+  if (!['claude', 'codex'].includes(runtime)) throw new Error('Unsupported installation runtime.');
+  if (!validName(catalog.marketplace) || !validName(selected)) throw new Error('Invalid installation identity.');
+  const order = installationOrder(catalog, selected);
+  const plugins = order.map(name => catalog.plugins.find(plugin => plugin.name === name));
+  const repositoryFor = plugin => {
+    const repository = plugin.repository ?? 'https://github.com/imaxxer121/dev-digest-ai-marketplace';
+    if (!/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+\/?$/.test(repository)) throw new Error('Invalid installation repository.');
+    return repository.replace(/\/$/, '');
+  };
+  if (runtime === 'claude') {
+    const slug = new URL(repositoryFor(plugins.at(-1))).pathname.replace(/^\//, '');
+    return { label: 'TERMINAL', copyLabel: 'Copy install', files: [], steps: [],
+      text: `claude plugin marketplace add ${slug}\nclaude plugin install ${selected}@${catalog.marketplace} --scope project`,
+      note: 'Run in your target repository, then start a fresh session. Copying never executes a command.' };
+  }
+
+  const marketplace = { name: catalog.marketplace, plugins: plugins.map(plugin => {
+    if (!validName(plugin.name) || typeof plugin.version !== 'string' || !/^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/.test(plugin.version)) throw new Error('Invalid plugin release identity.');
+    const repository = repositoryFor(plugin);
+    return { name: plugin.name, source: { source: 'git-subdir', url: repository.endsWith('.git') ? repository : `${repository}.git`,
+      path: `plugins/${plugin.name}`, ref: `${plugin.name}--v${plugin.version}` },
+      policy: { installation: 'AVAILABLE', authentication: 'ON_USE' }, category: 'Productivity' };
+  }) };
+  const files = [
+    { path: '.agents/plugins/marketplace.json', format: 'json', content: JSON.stringify(marketplace, null, 2) + '\n' },
+    { path: '.codex/config.toml', format: 'toml', content: order.map(name => `[plugins.${JSON.stringify(`${name}@${catalog.marketplace}`)}]\nenabled = true`).join('\n\n') + '\n' },
+  ];
+  const steps = [
+    'Merge these entries into your target repository’s existing files. Preserve unrelated settings and update matching entries or tables; do not blindly overwrite either file. If your existing marketplace uses a different name, use that name in the enabled plugin IDs too.',
+    `Open Codex in this trusted project and use /plugins. Select ${catalog.marketplace} (or your existing marketplace name) and explicitly install each plugin in this dependency-first order: ${order.join(', ')}. Do not assume dependencies are installed automatically.`,
+    'Start a fresh Codex session after installing the plugins. Project enable flags apply only to trusted projects.',
+  ];
+  const text = [steps[0], ...files.map(file => `${file.path}\n\`\`\`${file.format}\n${file.content.trimEnd()}\n\`\`\``), ...steps.slice(1)].join('\n\n');
+  return { label: 'SETUP', copyLabel: 'Copy setup', files, steps, text,
+    note: 'Copying only copies this guide. Review and merge the files, then install through /plugins.' };
+}
