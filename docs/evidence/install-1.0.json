@@ -1,0 +1,39 @@
+{
+  "runtime": "Claude Code CLI 2.1.301, installation only; no Claude inference",
+  "marketplace_commit": "15af4ceeff1e26e959649e9173f6cb651c882fe8",
+  "install_outcome": "ok (+3 dependencies)",
+  "plugins": [
+    {
+      "id": "architecture-review@dev-digest-ai-marketplace",
+      "cache_version": "1.0.0-15af4ceeff1e",
+      "manifest_version": "1.0.0",
+      "enabled": true,
+      "scope": "project",
+      "project_enabled": true
+    },
+    {
+      "id": "engineering-paved-path@dev-digest-ai-marketplace",
+      "cache_version": "1.0.0-15af4ceeff1e",
+      "manifest_version": "1.0.0",
+      "enabled": true,
+      "scope": "project",
+      "project_enabled": true
+    },
+    {
+      "id": "research-tools@dev-digest-ai-marketplace",
+      "cache_version": "1.0.0-15af4ceeff1e",
+      "manifest_version": "1.0.0",
+      "enabled": true,
+      "scope": "project",
+      "project_enabled": true
+    },
+    {
+      "id": "sdd-engineering@dev-digest-ai-marketplace",
+      "cache_version": "1.0.0",
+      "manifest_version": "1.0.0",
+      "enabled": true,
+      "scope": "project",
+      "project_enabled": true
+    }
+  ]
+}
