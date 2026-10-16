@@ -1,0 +1,67 @@
+{
+  "observed_at": "2026-10-16T14:23:40.813Z",
+  "marketplace": "dev-digest-ai-stable",
+  "source_pin": "15af4ceeff1e26e959649e9173f6cb651c882fe8",
+  "plugin_version": "1.0.0",
+  "trial": {
+    "id": "stable-smoke",
+    "group": "treatment",
+    "version": "1.0.0",
+    "model": "gpt-6.1-sol",
+    "success": true,
+    "quality": {
+      "success": true,
+      "errors": []
+    },
+    "input_tokens": 24476,
+    "cached_input_tokens": 0,
+    "output_tokens": 5306,
+    "duration_ms": 121282,
+    "stages": [
+      {
+        "stage": "spec-creator",
+        "exit": 0,
+        "signal": null,
+        "timed_out": false,
+        "duration_ms": 62550,
+        "input_tokens": 11019,
+        "cached_input_tokens": 0,
+        "output_tokens": 2772,
+        "reported_turns": 1,
+        "model_generated_tool_calls": 0,
+        "native_cli_invocations": 1,
+        "actual_http_request_count": null,
+        "raw_event_sha256": "e7b1d23128e0f8ff96fb632117f6ac3ea4b8864b7e3c70a33193e07910f71f1f",
+        "prompt_utf8_bytes": 5889
+      },
+      {
+        "stage": "implementation-planner",
+        "exit": 0,
+        "signal": null,
+        "timed_out": false,
+        "duration_ms": 58732,
+        "input_tokens": 13457,
+        "cached_input_tokens": 0,
+        "output_tokens": 2534,
+        "reported_turns": 1,
+        "model_generated_tool_calls": 0,
+        "native_cli_invocations": 1,
+        "actual_http_request_count": null,
+        "raw_event_sha256": "8dfa5f170e0f0e31f665e31fec90d016416e52485d5c45745e78c638252ddbf7",
+        "prompt_utf8_bytes": 16813
+      }
+    ],
+    "billed_usd": null
+  },
+  "profile_hashes": {
+    "spec-creator": "141e10e4eb5095a9393d46d5592e13ccc4612e78baa68acf4a0860092a09baec",
+    "implementation-planner": "94a74ada783fbb1a9fd6c4d09bee6c0aa0862acde1a48877ca24037b41235bd0"
+  },
+  "independent_review": {
+    "verdict": "PASS",
+    "scope": "Functional contract, mandatory acceptance coverage, valid task DAG and read-only reviewer ownership. Proposed artifacts only; no implementation or command execution by this model trial."
+  },
+  "first_attempt": true,
+  "scenario_unchanged": true,
+  "target_bytes_note": "Original source text matches after normalizing LF/CRLF; raw target hashes differ from the first cost cohort due to Git checkout line endings."
+}
