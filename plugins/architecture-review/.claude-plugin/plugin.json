@@ -1,0 +1,17 @@
+{
+  "name": "architecture-review",
+  "version": "1.0.0",
+  "description": "Independent architecture review against the target repository boundaries.",
+  "author": {
+    "name": "Milad"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/imaxxer121/dev-digest-ai-marketplace",
+  "repository": "https://github.com/imaxxer121/dev-digest-ai-marketplace",
+  "dependencies": [
+    {
+      "name": "engineering-paved-path",
+      "version": "^1.0.0"
+    }
+  ]
+}

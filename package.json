@@ -1,0 +1,16 @@
+{
+  "name": "dev-digest-ai-marketplace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "validate": "node scripts/validate-marketplace.mjs",
+    "test": "node --test test/*.test.mjs",
+    "build:index": "node scripts/build-index.mjs",
+    "build": "npm run build:index && npm --prefix site run build",
+    "dev": "npm run build:index && npm --prefix site run dev"
+  },
+  "dependencies": { "gray-matter": "^4.0.3", "semver": "^7.7.3" },
+  "devDependencies": { "jsdom": "^26.1.0" }
+}

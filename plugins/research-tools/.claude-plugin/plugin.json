@@ -1,0 +1,11 @@
+{
+  "name": "research-tools",
+  "version": "1.0.0",
+  "description": "Repository research with source citations and a read-only researcher.",
+  "author": {
+    "name": "Milad"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/imaxxer121/dev-digest-ai-marketplace",
+  "repository": "https://github.com/imaxxer121/dev-digest-ai-marketplace"
+}
